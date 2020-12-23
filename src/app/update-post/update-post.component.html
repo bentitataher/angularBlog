@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="upDateForm">
+      
+      <div class="form-group">
+        <label for="nom">Titre :</label>
+        <input formControlName="titre" type="text" class="form-control" id="nom" placeholder="Ajouter un titre à votre publication">
+      </div>
+
+      <div class="form-group">
+          <label>Publication :</label>
+          <textarea  formControlName="description"  class="form-control" id="bio" rows="3"></textarea>
+      </div>
+        
+      <div class="form-group">
+        <label>Catégorie :</label>
+        <select  formControlName="categorie"  id="selection" class="form-control">
+          <option value="">Choisissez une catégorie</option>
+            <option value="sport">Sport</option>
+            <option value="technologies">Technologies</option>
+            <option value="economie">Economies</option>
+            <option value="societe">Socièté</option>
+            <option value="culture">Culture</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" type="submit" (click)="upDate()">Update</button>
+
+  </form>
+  {{this.upDateForm.value | json}}
+<div>
